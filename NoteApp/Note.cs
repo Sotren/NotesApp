@@ -72,7 +72,37 @@ namespace NoteApp
             };
         }
 
-     
+        public override bool Equals(object obj)
+        {
+            if (obj is Note note)
+            {
+                if (note.Title != this.Title)
+                {
+                    return false;
+                }
+                if (note.NoteDescription != this.NoteDescription)
+                {
+                    return false;
+                }
+                if (note.TimeCreated != this.TimeCreated)
+                {
+                    return false;
+                }
+                if (note.TimeRecentUpdate != this.TimeRecentUpdate)
+                {
+                    return false;
+                }
+                if (note.NoteCategory != this.NoteCategory)
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            return false;
+        }
 
     }
+
 }
+
