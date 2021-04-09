@@ -73,9 +73,39 @@ namespace NoteAppUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_file_40456 {
+            get {
+                object obj = ResourceManager.GetObject("delete-file_40456", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document_add_256_icon_icons_com_75994 {
+            get {
+                object obj = ResourceManager.GetObject("document_add_256_icon-icons.com_75994", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap document_add_256_icon_icons1 {
             get {
                 object obj = ResourceManager.GetObject("document_add_256_icon-icons1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_file256_25239 {
+            get {
+                object obj = ResourceManager.GetObject("edit-file256_25239", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -138,6 +138,7 @@
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(171, 21);
             this.CategoryComboBox.TabIndex = 1;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged_1);
             // 
             // label1
             // 
@@ -267,7 +268,7 @@
             // 
             this.RemoveNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveNoteButton.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.RemoveNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.delete_file;
+            this.RemoveNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.delete_file_40456;
             this.RemoveNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.RemoveNoteButton.FlatAppearance.BorderSize = 0;
             this.RemoveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -282,7 +283,7 @@
             // EditNoteButton
             // 
             this.EditNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.edit_file256_252391;
+            this.EditNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.edit_file256_25239;
             this.EditNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.EditNoteButton.FlatAppearance.BorderSize = 0;
             this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -297,7 +298,7 @@
             // AddNoteButton
             // 
             this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.document_add_256_icon_icons1;
+            this.AddNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.document_add_256_icon_icons_com_75994;
             this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddNoteButton.FlatAppearance.BorderSize = 0;
             this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

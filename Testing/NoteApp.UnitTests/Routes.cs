@@ -23,7 +23,7 @@ namespace NoteApp.UnitTests
         public static string DirectoryPath()
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            return path + @"\NoteApp";
+            return path + @"\NoteApp\";
         }
     }
 }

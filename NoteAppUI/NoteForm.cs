@@ -28,9 +28,9 @@ namespace NoteAppUI
             {
                 tempNote = value;
                 NameNoteTextBox.Text = value.Title;
-                TimeCreateDateTimePicker.Value = value.TimeCreated;
-                TimeUpdateDateTimePicker.Value = value.TimeRecentUpdate;
-                TextNoteTextBox.Text = value.NoteDescription;
+                TimeCreateDateTimePicker.Value = value.TimeCreate;
+                TimeUpdateDateTimePicker.Value = value.TimeLastChange;
+                TextNoteTextBox.Text = value.TextNote;
                 NoteCategoryComboBox.Text = value.NoteCategory.ToString();
             }
         }
@@ -40,7 +40,7 @@ namespace NoteAppUI
             NoteCategoryComboBox.DataSource = Enum.GetValues(typeof(NotesCategory));
         }
 
-       
+
         /// <summary>
         /// Действие, при активации кнопки ОК
         /// </summary>
@@ -60,7 +60,7 @@ namespace NoteAppUI
         /// <summary>
         /// Действия, при закрытии формы
         /// </summary>
-       private void AddEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void AddEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (DialogResult != DialogResult.Cancel) return;
             if (NameNoteTextBox.Text == "" && NoteCategoryComboBox.Text == "" && TextNoteTextBox.Text == "")
@@ -84,11 +84,11 @@ namespace NoteAppUI
             try
             {
                 TepmNote.Title = NameNoteTextBox.Text;
-                TepmNote.TimeCreated = TimeCreateDateTimePicker.Value;
-                TepmNote.TimeRecentUpdate = DateTime.Now;
-                TepmNote.NoteDescription = TextNoteTextBox.Text;
-                var notesCategory = (NotesCategory) NoteCategoryComboBox.SelectedItem;
-                TepmNote.NoteCategory = notesCategory ;
+                TepmNote.TimeCreate = TimeCreateDateTimePicker.Value;
+                TepmNote.TimeLastChange = DateTime.Now;
+                TepmNote.TextNote = TextNoteTextBox.Text;
+                var notesCategory = (NotesCategory)NoteCategoryComboBox.SelectedItem;
+                TepmNote.NoteCategory = notesCategory;
                 DialogResult = DialogResult.OK;
             }
             catch (Exception e)

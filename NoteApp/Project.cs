@@ -7,16 +7,12 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Runtime.InteropServices.ComTypes;
 
 
 namespace NoteApp
 {
-    /// <summary>
-    /// Класс который содержит все заметки
-    /// </summary>
-
-
-
     /// <summary>
     /// Класс который содержит список всех контактов
     /// </summary>
@@ -37,23 +33,16 @@ namespace NoteApp
         /// </summary>
         public List<Note> SortNotes(List<Note> notes, NotesCategory category)
         {
-            return notes = notes.Where(item => item.NoteCategory == category).OrderByDescending(item => item.TimeRecentUpdate).ToList();
+            return notes = notes.Where(item => item.NoteCategory == category).OrderByDescending(item => item.TimeLastChange).ToList();
         }
         /// <summary>
         /// Сортировка по дате изменения
         /// </summary>
         public List<Note> SortNotes(List<Note> notes)
         {
-            return notes = notes.OrderByDescending(item => item.TimeRecentUpdate).ToList();
+            return notes = notes.OrderByDescending(item => item.TimeLastChange).ToList();
         }
 
     }
 
 }
-
-
-
-
-
-
-    

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace NoteApp
 {
     /// <summary>
-    /// Класс заметка, здесь хранится информация о название заметки,ее категории
+    /// Класс Запись. Здесь хранится информация о название заметки,ее категории
     /// содержании,даты создания и дате изменения
     /// </summary>
     public class Note : ICloneable
@@ -17,10 +17,11 @@ namespace NoteApp
         /// <summary>
         /// Свойство имени заметки.
         /// Проверка на длину длину символом: менее 50 символов.
+        /// Устанавливает первую букву в верхний регистр.
         /// </summary>
         public string Title
         {
-            get => _title; 
+            get => _title;
             set
             {
                 if (value.Length >= 50)
@@ -29,7 +30,7 @@ namespace NoteApp
                 }
                 else
                 {
-                    if (value !="")
+                    if (value != "")
                     {
                         _title = value;
                     }
@@ -38,36 +39,37 @@ namespace NoteApp
             }
         }
         /// <summary>
-        /// Свойство категории заметки
+        /// Свойство категории заметки. Заменяет время исправления при смене категории
         /// </summary>
         public NotesCategory NoteCategory { get; set; }
 
         /// <summary>
         /// Свойство имени заметки. Изменяет время после изменения имени.
         /// </summary>
-        public string NoteDescription { get; set; }
+        public string TextNote { get; set; }
 
         /// <summary>
         /// Свойство для времени создания
         /// </summary>
-        public DateTime TimeCreated { get; set; } = DateTime.Now;
+        public DateTime TimeCreate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Свойство для изменения времени
         /// </summary>
-        public DateTime TimeRecentUpdate { get; set; } = DateTime.Now;
+        public DateTime TimeLastChange { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Метод клонирования
         /// </summary>
+        /// <returns>Возвращает копию класса Note</returns>
         public object Clone()
         {
             return new Note
             {
                 Title = Title,
-                NoteDescription = NoteDescription,
-                TimeRecentUpdate = TimeRecentUpdate,
-                TimeCreated = TimeCreated,
+                TextNote = TextNote,
+                TimeLastChange = TimeLastChange,
+                TimeCreate = TimeCreate,
                 NoteCategory = NoteCategory
             };
         }
@@ -80,15 +82,15 @@ namespace NoteApp
                 {
                     return false;
                 }
-                if (note.NoteDescription != this.NoteDescription)
+                if (note.TextNote != this.TextNote)
                 {
                     return false;
                 }
-                if (note.TimeCreated != this.TimeCreated)
+                if (note.TimeCreate != this.TimeCreate)
                 {
                     return false;
                 }
-                if (note.TimeRecentUpdate != this.TimeRecentUpdate)
+                if (note.TimeLastChange != this.TimeLastChange)
                 {
                     return false;
                 }
@@ -103,6 +105,4 @@ namespace NoteApp
         }
 
     }
-
 }
-

@@ -14,23 +14,22 @@ namespace NoteApp.UnitTests
     {
         public Project PrepareProject()
         {
-
             var sourseProject = new Project();
             sourseProject.Notes.Add(new Note()
             {
                 Title = "Note",
-                NoteDescription = "Text",
+                TextNote = "Text",
                 NoteCategory = NotesCategory.Documents,
-                TimeCreated = new DateTime(2021, 3, 09),
-                TimeRecentUpdate = new DateTime(2021, 3, 09)
+                TimeCreate = new DateTime(2020, 12, 09),
+                TimeLastChange = new DateTime(2020, 12, 09)
             });
             sourseProject.Notes.Add(new Note()
             {
                 Title = "Note2",
-                NoteDescription = "Text2",
+                TextNote = "Text2",
                 NoteCategory = NotesCategory.Work,
-                TimeCreated = new DateTime(2021, 3, 09),
-                TimeRecentUpdate = new DateTime(2021, 3, 09)
+                TimeCreate = new DateTime(2020, 12, 09),
+                TimeLastChange = new DateTime(2020, 12, 09)
             });
             return sourseProject;
         }
@@ -59,7 +58,7 @@ namespace NoteApp.UnitTests
             var expectedFileContent = File.ReadAllText(expectedFileName);
             NUnit.Framework.Assert.AreEqual(expectedFileContent, actualFileContent);
         }
-        
+
         [Test]
         public void LoadFromFile_CorrectProject_FileLoadedCorrectly()
         {
@@ -82,6 +81,7 @@ namespace NoteApp.UnitTests
                 }
             });
         }
+
         [Test]
         public void LoadFromFile_UnCorrectPath_ReturnEmptyProject()
         {

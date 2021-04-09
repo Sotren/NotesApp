@@ -14,7 +14,7 @@ namespace NoteApp
     public class ProjectManager
     {
         /// <summary>
-        ///Сохранение по умолчанию
+        /// Путь по умолчанию,куда сохраняется файл
         /// </summary>
         public static string PathFile()
         {
@@ -23,16 +23,16 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Создание по умолачанию
+        /// Путь по умолчанию,по которому создается папка для файла
         /// </summary>
         public static string PathDirectory()
         {
             var filepath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            return filepath + @"\NoteApp";
+            return filepath + @"\NoteApp\";
         }
 
         /// <summary>
-        /// Сериализация данных сохранение
+        /// Сериализация данных
         /// </summary>
         /// <param name="data">Данные для сериализации</param>
         /// <param name="filepath">Путь к файлу</param>
@@ -51,7 +51,7 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Сериализация данных загрузка
+        /// Сериализация данных
         /// </summary>
         /// <param name="filepath">Путь к файлу</param>
         /// <returns></returns>
@@ -69,7 +69,7 @@ namespace NoteApp
                 using (JsonReader reader = new JsonTextReader(sr))
                     project = serializer.Deserialize<Project>(reader);
             }
-            catch 
+            catch
             {
                 return new Project();
             }

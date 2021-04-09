@@ -13,7 +13,7 @@ namespace NoteApp.UnitTests
         {
             //Setup
             var note = new Note();
-            var sourceName = "Сдать долг";
+            var sourceName = "сдать долг";
             var expectedName = sourceName;
 
             //Act
@@ -29,12 +29,12 @@ namespace NoteApp.UnitTests
         {
             //Setup
             var note = new Note();
-            var sourceName = "Откройте границу ";
+            var sourceName = "Откройте границу";
             var expectedName = sourceName;
 
             //Act
-            note.NoteDescription = sourceName;
-            var actualName = note.NoteDescription;
+            note.TextNote = sourceName;
+            var actualName = note.TextNote;
 
             //Assert
             NUnit.Framework.Assert.AreEqual(expectedName, actualName);
@@ -61,12 +61,12 @@ namespace NoteApp.UnitTests
         {
             //Setup
             var note = new Note();
-            var sourceName = new DateTime(2021, 3, 09);
+            var sourceName = new DateTime(2020, 12, 09);
             var expectedName = sourceName;
 
             //Act
-            note.TimeCreated = sourceName;
-            var actualName = note.TimeCreated;
+            note.TimeCreate = sourceName;
+            var actualName = note.TimeCreate;
 
             //Assert
             NUnit.Framework.Assert.AreEqual(expectedName, actualName);
@@ -77,12 +77,12 @@ namespace NoteApp.UnitTests
         {
             //Setup
             var note = new Note();
-            var sourceName = new DateTime(2021, 3, 09);
+            var sourceName = new DateTime(2020, 12, 09);
             var expectedName = sourceName;
 
             //Act
-            note.TimeRecentUpdate = sourceName;
-            var actualName = note.TimeRecentUpdate;
+            note.TimeLastChange = sourceName;
+            var actualName = note.TimeLastChange;
 
             //Assert
             NUnit.Framework.Assert.AreEqual(expectedName, actualName);
@@ -93,7 +93,7 @@ namespace NoteApp.UnitTests
         {
             //Setup
             var note = new Note();
-            var sourceName ="Какой-то большой текст специално для провреки супер длинный и.....Очень нужный :)";
+            var sourceName = "Супер длиный текст который не нужен от слова совсем так сказать , повтор для тайталалала...Наверное :)";
 
             //Assert
             NUnit.Framework.Assert.Throws<ArgumentException>
@@ -130,13 +130,13 @@ namespace NoteApp.UnitTests
             var notesCategory = sourceCategory;
             var expectedNote = new Note
             {
-                Title = "Разработка",
-                NoteDescription = "shit happens",
+                Title = "Работа",
+                TextNote = "my work", 
                 NoteCategory = notesCategory,
-                TimeCreated = new DateTime(2021, 3, 09),
-                TimeRecentUpdate = new DateTime(2021, 3, 09)
+                TimeCreate = new DateTime(2020, 12, 09),
+                TimeLastChange = new DateTime(2020, 12, 09)
             };
-            
+
             //Act
             var actualNote = expectedNote.Clone() as Note;
             var expected = JsonConvert.SerializeObject(expectedNote);

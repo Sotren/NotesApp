@@ -170,9 +170,9 @@ namespace NoteAppUI
             var selectNote = _viewNotes[index];
             _project.SelectedIndex = NotesListBox.SelectedIndex;
             NameNote.Text = selectNote.Title;
-            TextNoteTextBox.Text = selectNote.NoteDescription;
-            TimeCreate.Value = selectNote.TimeCreated;
-            TimeUpdate.Value = selectNote.TimeRecentUpdate;
+            TextNoteTextBox.Text = selectNote.TextNote;
+            TimeCreate.Value = selectNote.TimeCreate;
+            TimeUpdate.Value = selectNote.TimeLastChange;
             NotesCategory.Text = selectNote.NoteCategory.ToString();
         }
 
@@ -313,7 +313,7 @@ namespace NoteAppUI
         /// <summary>
         /// Обновление списка заметок при выборе категории
         /// </summary>
-        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void CategoryComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             UpdateListBox();
         }
@@ -328,5 +328,7 @@ namespace NoteAppUI
                 ShowAboutForm();
             }
         }
+
+
     }
 }
