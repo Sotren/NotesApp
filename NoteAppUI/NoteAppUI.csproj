@@ -123,6 +123,6 @@
 xcopy $(OutDir)$(SolutionDir)*.dll $(ProjectDir)InnoSetupScript\</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>C:\Program Files (x86)\Inno Setup 6\ISCC.exe"$(SolutionDir)</PostBuildEvent>
+    <PostBuildEvent>C:\Program Files (x86)\Inno Setup 6\ISCC.exe"$(SolutionDir)InstalScript\InnoSetupScript.iss</PostBuildEvent>
   </PropertyGroup>
 </Project>
