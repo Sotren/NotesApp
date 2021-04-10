@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{6CBB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteApp.UnitTests", "Testing\NoteApp.UnitTests\NoteApp.UnitTests.csproj", "{65E8E5BE-2ED6-45FC-B2F1-2803745B0019}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InstalScript", "InstalScript", "{C6005822-7ECE-49DD-8C2F-CAA8BC5FF9A6}"
+	ProjectSection(SolutionItems) = preProject
+		InnoSetupScript.iss = InnoSetupScript.iss
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

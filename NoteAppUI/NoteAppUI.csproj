@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>note_.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -113,14 +112,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\delete-file.png" />
-    <None Include="Resources\document_add_256_icon-icons.com_75994.png" />
-    <None Include="Resources\edit-file256_25239.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="note_.ico" />
     <Content Include="Resources\delete-file_40456.ico" />
     <Content Include="Resources\document_add_256_icon-icons.com_75994.ico" />
     <Content Include="Resources\edit-file256_25239.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>md $(SolutionDir)InnoSetupScript
+xcopy $(OutDir)$(SolutionDir)*.dll $(ProjectDir)InnoSetupScript\</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>C:\Program Files (x86)\Inno Setup 6\ISCC.exe"$(SolutionDir)</PostBuildEvent>
+  </PropertyGroup>
 </Project>
