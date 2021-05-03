@@ -38,11 +38,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\стас\OneDrive\Рабочий стол\NoteApp-develop\NoteApp\NoteAppUI\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\стас\OneDrive\Рабочий стол\NoteApp-develop\NoteApp\NoteAppUI\bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\стас\OneDrive\Рабочий стол\NoteApp-develop\NoteApp\NoteAppUI\bin\Release\NoteApp.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\стас\OneDrive\Рабочий стол\NoteApp-develop\NoteApp\NoteAppUI\bin\Release\NoteAppUI.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\стас\OneDrive\Рабочий стол\NoteApp-develop\NoteApp\NoteApp\bin\Release\netstandard2.0\NoteApp.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Release\*.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
